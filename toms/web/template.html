@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="dark light" />
+    <title>Gawr Gura video browser</title>
+    <style>$css</style>
+    <script type="application/json" id="fps_json">$fps</script>
+    <script type="application/json" id="config_json">$config</script>
+    <script type="module">$js</script>
+
+    <script>
+    function visit(elem) {
+      elem.parentElement.classList.add("visited");
+    }
+
+    function fill(elem) {
+      video_input.value = elem.getAttribute('data-video-id')
+      clear_input.value = elem.getAttribute('data-video-id')
+      time_input.value = elem.getAttribute('data-time-id')
+    }
+    </script>
+  </head>
+
+  <body>
+    <div class="container">
+      <section class="controls">
+        <form id="search_form" action="" autocomplete="off">
+          <div class="search-bar">
+            <input class="input" type="text" name="query"
+            placeholder="Enter your query..." />
+            <input class="input" type="submit" value="search" />
+          </div>
+        </form>
+
+        <form id="clear_form" action="" autocomplete="off">
+          <div class="clear-bar">
+            <input id="clear_input" class="input" type="text" name="video"
+              placeholder="Video id to remove..." />
+            <input class="input" type="submit" value="clear" />
+          </div>
+        </form>
+
+        <form id="submit_form" action="" autocomplete="off">
+          <div class="fields">
+            <span class="label">Video</span>
+            <input id="video_input" class="input" type="text" name="video" placeholder="Enter the video to submit..." />
+            <span class="label">Time</span>
+            <input id="time_input" class="input" type="text" name="time" placeholder="Enter the time to submit..." />
+          </div>
+
+          <div class="fields">
+            <span class="label">Q&A</span>
+            <input id="QA_input" class="input" type="text" name="QA" placeholder="Enter the answer to submit..." />
+          </div>
+
+          <input class="input" type="text" name="session" id="session_field" hidden />
+
+          <div class="buttons">
+            <input class="input" type="button" id="login_button" value="Login">
+            <input class="input" type="submit" value="Submit">
+          </div>
+        </form>
+
+        <pre id="submit_log"></pre>
+      </section>
+
+      <section id="result_container" />
+    </div>
+  </body>
+</html>

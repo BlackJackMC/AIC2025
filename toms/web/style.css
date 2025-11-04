@@ -1,0 +1,190 @@
+/* Global Styles */
+* {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans',
+    'Helvetica Neue', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #121212; /* Dark background */
+  color: #e0e0e0; /* Light text for contrast */
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* Container Styling */
+.container {
+  display: flex;
+  flex-wrap: nowrap;
+  position: fixed;
+  inset: 0;
+  background-color: #1e1e1e; /* Slightly lighter background */
+  overflow: auto;
+}
+
+/* Controls Section */
+.controls {
+  flex: 0 0 20rem;
+  width: 100%;
+  max-width: 30rem;
+  background-color: #222222;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.5); /* Subtle shadow for depth */
+}
+
+.label {
+  padding: 0.675em 1.5em 0.675em 0;
+  color: #b0b0b0; /* Softer text color */
+}
+
+.input {
+  padding: 0.675em 1.5em;
+  border-radius: 0.25em;
+  cursor: pointer;
+  background-color: #333333;
+  color: #e0e0e0;
+  border: 1px solid #555555;
+}
+
+.input:hover {
+  background-color: #444444; /* Slight hover effect */
+}
+
+/* Media Queries for Dark Theme Preferences */
+@media (prefers-color-scheme: dark) {
+  .input {
+    border: none;
+  }
+}
+
+/* Bar & Search Bar Styling */
+.bar, .search-bar, .clear-bar{
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  background-color: #292929;
+  border-radius: 0.5rem;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.4);
+  margin-bottom: 1.5rem;
+}
+
+.bar > [type="text"], .search-bar > [type="text"] {
+  flex-grow: 1;
+  background-color: #333333;
+  color: #e0e0e0;
+  padding: 0.75rem;
+  border-radius: 0.25rem;
+  border: 1px solid #555555;
+}
+
+.bar > [type="text"]:focus, .search-bar > [type="text"]:focus {
+  outline: none;
+  border-color: #888888; /* Focused input effect */
+}
+
+/* Forms Layout */
+#submit_form{
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  gap: 1rem;
+  background-color: #1f1f1f;
+  border-radius: 0.5rem;
+}
+
+.fields {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 1rem;
+  align-items: center;
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.buttons > input {
+  font-size: 1rem;
+  padding: 0.75rem;
+  background-color: #3a3a3a;
+  border: none;
+  color: #e0e0e0;
+  border-radius: 0.25rem;
+  cursor: pointer;
+}
+
+.buttons > input:hover {
+  background-color: #555555;
+}
+
+/* Result Section */
+#result_container {
+  padding: 1rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
+  gap: 1.5rem;
+  height: 100%;
+  flex-grow: 1;
+  overflow-y: scroll;
+  background-color: #1a1a1a;
+}
+
+.result-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  background-color: #282828;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+.result-item:hover {
+  background-color: #333333;
+}
+
+.result-item.hidden {
+  display: none;
+}
+
+.result-item.visited {
+  background-color: rgba(255, 64, 129, 0.2);
+}
+
+.result-thumbnail {
+  width: 100%;
+  border-radius: 0.25rem;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+.result-stats {
+  display: flex;
+  justify-content: space-between;
+  color: #b0b0b0;
+}
+
+/* Log Styling */
+#submit_log {
+  font-family: monospace;
+  padding: 1rem;
+  background-color: #202020;
+  color: #b0b0b0;
+  border-radius: 0.5rem;
+  overflow-x: auto;
+}
+
+/* Print Page Settings */
+@page {
+  margin: 0;
+  padding: 0;
+  size: 800px 600px;
+  background-color: #121212;
+  color: #e0e0e0;
+}

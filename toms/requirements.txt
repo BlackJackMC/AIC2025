@@ -1,0 +1,7 @@
+ffmpeg
+numpy
+starlette
+uvicorn
+ftfy 
+regex 
+tqdm
