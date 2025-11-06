@@ -3,5 +3,17 @@
     "build": {
         "dockerfile": "Dockerfile"
     },
-    "runArgs": ["--gpus", "all"]
+    "runArgs": [
+        "--gpus",
+        "all"
+    ],
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "ms-python.python",
+                "KevinRose.vsc-python-indent",
+                "Postman.postman-for-vscode"
+            ]
+        }
+    }
 }
