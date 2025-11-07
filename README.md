@@ -1,7 +1,7 @@
 # AIC2025
 
 ## API endpoints
-Please go to `/docs` to see the documents
+Please go to `/docs` endpoint to see the documents
 
 ## Static files
 Everything under `/dataset` folder. 
