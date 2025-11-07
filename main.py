@@ -1,16 +1,20 @@
-import json
 import uvicorn
 from fastapi import FastAPI
 from fastapi.staticfiles import StaticFiles
+from fastapi.responses import FileResponse
 from service import search_all_queries
 
 app = FastAPI()
 
 app.mount("/dataset", StaticFiles(directory="dataset"), name="dataset")
 
-with open("config.json", "r") as f:
-    config = json.load(f)
-    
+@app.get('/segments/{segment}')
+async def get_segment(segment: str):
+    return FileResponse(f"./dataset/segments/{segment}.mp4", 
+                        media_type="video/mp4", 
+                        headers= {
+                            "Accept-Ranges": "bytes"
+                        })
 
     
 @app.get('/videos')
@@ -29,4 +33,4 @@ def search(queries: str, k: int = 1):
     }
     
 if __name__ == '__main__':
-    uvicorn.run(app, host="127.0.0.1", port=1111)
+    uvicorn.run(app, host="0.0.0.0", port=1111)

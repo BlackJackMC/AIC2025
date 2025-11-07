@@ -14,5 +14,5 @@ For example, `GET /dataset/videos/L26_V256_0_20.mp4`
 dataset/
 ├── clip-features: clip vectors only, no nested folder
 ├── transcript: transcript only, no nested folder
-└── videos: video only, no nested folder
+└── segments: video only, no nested folder
 ```
