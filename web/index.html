@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AIC Dashboard</title>
+  <link rel="stylesheet" href="./style.css">
+
+  <script type="text/javascript" src="index.js" defer></script>
+</head>
+
+<body>
+  <div class="container" id="dashboard">
+    <div id="sidebar">
+      <form id="login">
+        <fieldset>
+          <legend>Login to DRES</legend>
+          <input type="text" placeholder="username" name="username">
+          <input type="password" placeholder="password" name="password">
+          <div class="status"></div>
+          <button type="submit">Login</button>
+        </fieldset>
+      </form>
+      <form id="submission">
+        <fieldset>
+          <legend>Submission</legend>
+          <select name="evaluation">
+            <option disabled selected hidden>Choose evaluation id</option>
+          </select>
+          <button id="get_eval">Get evaluation id</button>
+          <select name="mode">
+            <option disabled selected hidden>Choose mode</option>
+            <option>KIS</option>
+            <option>QA</option>
+            <option>TRAKE</option>
+          </select>
+          <input class="kis qa trake" type="text" placeholder="Video name" name="video">
+          <input class="kis" type="text" placeholder="Time(ms)">
+          <input class="qa" type="text" placeholder="Answer">
+          <button class="trake">Add frame</button>
+          <button type="submit">Submit</button>
+        </fieldset>
+      </form>
+
+    </div>
+    <fieldset class="video_viewer">
+      <legend>Videos</legend>
+      <div class="videos"></div>
+    </fieldset>
+  </div>
+
+</body>
+
+</html>
